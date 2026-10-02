@@ -327,7 +327,7 @@ const CUMPLEANIOS_ICES = [
   },
   {
     "nombre": "Gabriel",
-    "apellido": "Fioritto",
+    "apellido": "Fiorito",
     "dia": 3,
     "mes": 9,
     "curso": "Profe",
@@ -408,7 +408,7 @@ const CUMPLEANIOS_ICES = [
   },
   {
     "nombre": "Cecilia",
-    "apellido": "Vera Candiotti",
+    "apellido": "Vera Candioti",
     "dia": 23,
     "mes": 12,
     "curso": "Profe",
