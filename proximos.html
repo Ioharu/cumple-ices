@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Próximos cumpleaños · ICES</title>
+    <script>
+        try {
+            if (localStorage.getItem("tema-ices") === "oscuro") {
+                document.documentElement.dataset.tema = "oscuro";
+            }
+        } catch (e) {}
+    </script>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body data-pagina="proximos">
+    <header class="encabezado encabezado-interior">
+        <div class="contenedor encabezado-contenido">
+            <div class="encabezado-texto">
+                <p class="institucion">ICES</p>
+                <h1>Próximos cumpleaños</h1>
+                <p class="bajada">Los diez festejos más cercanos a partir de mañana.</p>
+            </div>
+            <div class="encabezado-lateral">
+                <img class="logo-ices" src="imagenes/ices.png" alt="Logo ICES" onerror="this.hidden=true">
+                <div class="marca-fecha" id="marca-fecha"></div>
+                <button class="boton-tema" id="boton-tema" type="button" aria-pressed="false">☾ Modo oscuro</button>
+            </div>
+        </div>
+    </header>
+
+    <nav class="menu-navegacion" aria-label="Navegación principal">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="proximos.html" aria-current="page">Próximos cumpleaños</a></li>
+            <li><a href="buscar.html">Buscar cumpleaños</a></li>
+        </ul>
+    </nav>
+
+    <main class="contenedor contenido-principal">
+        <section class="seccion seccion-superior">
+            <div class="encabezado-seccion">
+                <div>
+                    <p class="titulo-seccion-corto">Filtro</p>
+                    <h2>Seleccionar un curso</h2>
+                    <p>La lista se actualiza automáticamente al elegir una opción.</p>
+                </div>
+                <form class="barra-filtro" id="formulario-filtro">
+                    <label for="filtro-curso">Curso</label>
+                    <select name="curso" id="filtro-curso">
+                        <option value="">Todos los cursos</option>
+                    </select>
+                </form>
+            </div>
+            <div class="grilla-tarjetas" id="lista-proximos"></div>
+        </section>
+    </main>
+
+    <footer class="pie-pagina">
+        <div class="contenedor pie-contenido">
+            <img class="logo-pie" src="imagenes/Logo-quintoON.png" alt="Quinto ON" onerror="this.hidden=true">
+            <p>ICES · Cumpleaños de la comunidad educativa</p>
+        </div>
+    </footer>
+    <script src="datos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

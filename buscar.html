@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar cumpleaños · ICES</title>
+    <script>
+        try {
+            if (localStorage.getItem("tema-ices") === "oscuro") {
+                document.documentElement.dataset.tema = "oscuro";
+            }
+        } catch (e) {}
+    </script>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body data-pagina="buscar">
+    <header class="encabezado encabezado-interior">
+        <div class="contenedor encabezado-contenido">
+            <div class="encabezado-texto">
+                <p class="institucion">ICES</p>
+                <h1>Buscar cumpleaños</h1>
+                <p class="bajada">Consultá por fecha, apodo, nombre o apellido.</p>
+            </div>
+            <div class="encabezado-lateral">
+                <img class="logo-ices" src="imagenes/ices.png" alt="Logo ICES" onerror="this.hidden=true">
+                <div class="marca-fecha" id="marca-fecha"></div>
+                <button class="boton-tema" id="boton-tema" type="button" aria-pressed="false">☾ Modo oscuro</button>
+            </div>
+        </div>
+    </header>
+
+    <nav class="menu-navegacion" aria-label="Navegación principal">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="proximos.html">Próximos cumpleaños</a></li>
+            <li><a href="buscar.html" aria-current="page">Buscar cumpleaños</a></li>
+        </ul>
+    </nav>
+
+    <main class="contenedor contenido-principal">
+        <section class="seccion seccion-superior">
+            <p class="titulo-seccion-corto">Búsqueda por fecha</p>
+            <h2>Elegir día y mes</h2>
+            <p>El año seleccionado no modifica el resultado.</p>
+
+            <form class="formulario-busqueda" id="formulario-busqueda-fecha">
+                <div class="campo-formulario">
+                    <label for="fecha-busqueda">Fecha</label>
+                    <input type="date" id="fecha-busqueda" name="fecha" required>
+                </div>
+                <button type="submit" class="boton">Buscar</button>
+            </form>
+            <div class="grilla-tarjetas" id="resultado-busqueda-fecha" aria-live="polite"></div>
+        </section>
+
+        <section class="seccion seccion-dividida">
+            <p class="titulo-seccion-corto">Búsqueda dinámica</p>
+            <h2>Buscar una persona</h2>
+            <p>Escribí al menos dos letras del apodo, nombre o apellido.</p>
+
+            <form class="formulario-busqueda" id="formulario-busqueda-nombre" autocomplete="off">
+                <div class="campo-formulario campo-completo">
+                    <label for="texto-busqueda-nombre">Apodo, nombre o apellido</label>
+                    <input type="search" id="texto-busqueda-nombre" name="q" placeholder="Ejemplo: Nacho" minlength="2">
+                </div>
+            </form>
+            <div class="grilla-tarjetas" id="resultado-busqueda-nombre" aria-live="polite" aria-busy="false"></div>
+        </section>
+    </main>
+
+    <footer class="pie-pagina">
+        <div class="contenedor pie-contenido">
+            <img class="logo-pie" src="imagenes/Logo-quintoON.png" alt="Quinto ON" onerror="this.hidden=true">
+            <p>ICES · Cumpleaños de la comunidad educativa</p>
+        </div>
+    </footer>
+    <script src="datos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

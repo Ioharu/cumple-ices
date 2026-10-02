@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cumpleaños ICES</title>
+    <script>
+        try {
+            if (localStorage.getItem("tema-ices") === "oscuro") {
+                document.documentElement.dataset.tema = "oscuro";
+            }
+        } catch (e) {}
+    </script>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body data-pagina="inicio">
+    <header class="encabezado">
+        <div class="contenedor encabezado-contenido">
+            <div class="encabezado-texto">
+                <p class="institucion">ICES</p>
+                <h1>Cumpleaños ICES</h1>
+                <p class="bajada">Un espacio para acompañar y celebrar a nuestra comunidad.</p>
+            </div>
+            <div class="encabezado-lateral">
+                <img class="logo-ices" src="imagenes/ices.png" alt="Logo ICES" onerror="this.hidden=true">
+                <div class="marca-fecha" id="marca-fecha"></div>
+                <button class="boton-tema" id="boton-tema" type="button" aria-pressed="false">☾ Modo oscuro</button>
+            </div>
+        </div>
+    </header>
+
+    <nav class="menu-navegacion" aria-label="Navegación principal">
+        <ul>
+            <li><a href="index.html" aria-current="page">Inicio</a></li>
+            <li><a href="proximos.html">Próximos cumpleaños</a></li>
+            <li><a href="buscar.html">Buscar cumpleaños</a></li>
+        </ul>
+    </nav>
+
+    <main class="contenedor contenido-principal">
+        <section class="presentacion">
+            <p class="titulo-seccion-corto">Agenda</p>
+            <h2>Cumpleaños de hoy</h2>
+            <p>Personas de nuestra comunidad que celebran su cumpleaños en esta fecha.</p>
+            <div class="grilla-tarjetas grilla-hoy" id="lista-hoy"></div>
+        </section>
+
+        <section class="seccion">
+            <div class="encabezado-seccion">
+                <div>
+                    <p class="titulo-seccion-corto">Calendario</p>
+                    <h2>Próximos cumpleaños</h2>
+                    <p>Los cinco festejos más cercanos a partir de mañana.</p>
+                </div>
+                <a class="boton boton-secundario" href="proximos.html">Ver lista completa</a>
+            </div>
+            <div class="grilla-tarjetas" id="lista-proximos-inicio"></div>
+        </section>
+    </main>
+
+    <footer class="pie-pagina">
+        <div class="contenedor pie-contenido">
+            <img class="logo-pie" src="imagenes/Logo-quintoON.png" alt="Quinto ON" onerror="this.hidden=true">
+            <p>5° Informática - 2026 - ICES · P ágina de cumpleaños de nuestro colegio</p>
+        </div>
+    </footer>
+    <script src="datos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
